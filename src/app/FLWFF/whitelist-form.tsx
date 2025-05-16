@@ -16,7 +16,7 @@ import { Input } from 'src/components/ui/input';
 import { useState, useTransition, useEffect } from 'react';
 import { Loader2, Wallet, Link2, Sparkles } from 'lucide-react';
 import { useAuth } from 'src/contexts/auth-context';
-import AuthModal from 'src/components/auth-modal';
+import AuthModal from 'src/components/auth/auth-modal';
 import { db } from 'src/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from 'sonner';

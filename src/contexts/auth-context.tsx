@@ -7,10 +7,7 @@ import { CHAIN_NAMESPACES, type SafeEventEmitterProvider } from '@web3auth/base'
 import { OpenloginAdapter } from '@web3auth/openlogin-adapter';
 import { ethers } from 'ethers';
 import { 
-  initializeFirebase, 
-  isFirebaseInitialized, 
-  ensureFirebaseInitialized 
-} from '@/lib/firebase';
+  initializeFirebase} from '@/lib/firebase';
 import type { User as FirebaseUser, Auth as FirebaseAuthInstanceType } from 'firebase/auth';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut as firebaseSignOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
@@ -43,6 +40,7 @@ interface AuthContextType {
   signupWithEmail: (email: string, pass: string) => Promise<FirebaseUser | null>;
   loginWithGoogle: () => Promise<FirebaseUser | null>;
   logout: () => Promise<void>;
+  signIn: (user: { id: string; email: string; name: string; avatar: string }) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -391,8 +389,31 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
+  const signIn = async (user: { id: string; email: string; name: string; avatar: string }) => {
+    setUser({
+      id: user.id,
+      email: user.email,
+      authMethod: 'web3auth_wallet',
+      walletAddress: user.id,
+      isWhitelisted: false,
+    });
+  };
+
   return (
-    <AuthContext.Provider value={{ user, loading, web3auth: web3authInstance, firebaseReady, loginWithWeb3, loginWithEmail, signupWithEmail, loginWithGoogle, logout }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading,
+        web3auth: web3authInstance,
+        firebaseReady,
+        loginWithWeb3,
+        loginWithEmail,
+        signupWithEmail,
+        loginWithGoogle,
+        logout,
+        signIn,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );

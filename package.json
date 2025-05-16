@@ -13,7 +13,7 @@
     "url": "https://github.com/kauntdewn1/sol-FLWFF.git"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -25,24 +25,28 @@
   },
   "dependencies": {
     "@hookform/resolvers": "5.0.1",
+    "@radix-ui/react-dialog": "1.1.13",
     "@radix-ui/react-select": "2.2.4",
     "@solana-foundation/solana-lib": "2.40.3",
     "@web3auth/base": "9.7.0",
     "@web3auth/ethereum-provider": "9.7.0",
     "@web3auth/modal": "9.7.0",
-    "@web3auth/openlogin-adapter": "^8.12.4",
+    "@web3auth/openlogin-adapter": "8.12.4",
     "@web3auth/solana-provider": "9.7.0",
+    "@web3auth/wallet-services-plugin": "9.7.0",
+    "clsx": "2.1.1",
     "date-fns": "4.1.0",
     "ethers": "6.14.0",
     "firebase": "11.7.3",
     "framer-motion": "12.12.1",
-    "lucide-react": "0.510.0",
+    "lucide-react": "0.511.0",
     "next": "15.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "7.56.3",
     "react-hot-toast": "2.5.2",
     "sonner": "2.0.3",
+    "tailwind-merge": "3.3.0",
     "zod": "3.24.4"
   },
   "devDependencies": {
@@ -65,5 +69,8 @@
     "typescript": "^5.3.3"
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
-  "type": "module"
+  "type": "module",
+  "resolutions": {
+    "@web3auth/base": "9.7.0"
+  }
 }
