@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/*
+Disallow: /admin/*
+
+# Host
+Host: https://flwff.xyz
+
+# Sitemaps
+Sitemap: https://flwff.xyz/sitemap.xml

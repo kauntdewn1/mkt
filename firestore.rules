@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Regras padrão - negar tudo
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+    // Regras para usuários autenticados
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Regras para dados públicos
+    match /public/{document=**} {
+      allow read: if true;
+      allow write: if request.auth != null;
+    }
+
+    // Função para verificar se o usuário é o dono do documento
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Regras para a coleção de whitelist
+    match /whitelist/{docId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update, delete: if false; // Apenas admin pode atualizar/deletar
+    }
+
+    // Regras para a coleção de preços
+    match /prices/{docId} {
+      allow read: if true; // Público pode ler
+      allow write: if false; // Apenas admin pode escrever
+    }
+
+    // Regras para a coleção de staking
+    match /staking/{docId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if isOwner(resource.data.userId);
+      allow delete: if false; // Apenas admin pode deletar
+    }
+  }
+}
