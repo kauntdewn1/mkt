@@ -16,7 +16,7 @@ export async function submitStakingAction(data: StakingFormValues) {
       throw new Error(`Valor máximo para stake é ${STAKE_CONFIG.MAX_AMOUNT} FLWFF`);
     }
 
-    if (!STAKE_CONFIG.DURATIONS.includes(data.durationMonths)) {
+    if (!STAKE_CONFIG.DURATIONS.includes(data.durationMonths as typeof STAKE_CONFIG.DURATIONS[number])) {
       throw new Error('Duração inválida para stake');
     }
 
@@ -27,10 +27,14 @@ export async function submitStakingAction(data: StakingFormValues) {
       ...data,
       startDate: serverTimestamp(),
       status: 'active',
-      apr: STAKE_CONFIG.APR_RATES[data.durationMonths],
-      estimatedReturn: data.amount * STAKE_CONFIG.APR_RATES[data.durationMonths] * (data.durationMonths / 12),
+      apr: STAKE_CONFIG.APR_RATES[data.durationMonths as keyof typeof STAKE_CONFIG.APR_RATES],
+      estimatedReturn: data.amount * STAKE_CONFIG.APR_RATES[data.durationMonths as keyof typeof STAKE_CONFIG.APR_RATES] * (data.durationMonths / 12),
       earlyWithdrawalPenalty: STAKE_CONFIG.EARLY_WITHDRAWAL_PENALTY
     };
+
+    if (!db) {
+      throw new Error('Firestore não está inicializado');
+    }
 
     const docRef = await addDoc(collection(db, 'staking'), stakeData);
 

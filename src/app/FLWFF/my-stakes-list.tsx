@@ -133,7 +133,7 @@ export default function MyStakesList() {
             <History className="mr-2 h-6 w-6" />
             Meus Stakes Registrados
         </CardTitle>
-        <CardDescription className="text-muted-foreground">Acompanhe seus compromissos com o fluxo $FLWFF.</CardDescription>
+        <CardDescription className="text-muted-foreground">Acompanhe seus compromissos com o fluxo $MKS.</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>

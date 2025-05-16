@@ -6,10 +6,10 @@ export default function TermsOfUse() {
         <p>Última atualização: {new Date().toLocaleDateString('pt-BR')}</p>
         
         <h2>1. Aceitação dos Termos</h2>
-        <p>Ao acessar e usar a plataforma FLWFF, você concorda com estes termos de uso.</p>
+        <p>Ao acessar e usar a plataforma $MKS, você concorda com estes termos de uso.</p>
 
         <h2>2. Serviços</h2>
-        <p>A $FLWFF oferece:</p>
+        <p>A $MKS oferece:</p>
         <ul>
           <li>Stablecoin utilitária</li>
           <li>Plataforma de staking</li>
@@ -47,7 +47,7 @@ export default function TermsOfUse() {
         <h2>7. Contato</h2>
         <p>Para questões sobre estes termos, entre em contato através de:</p>
         <ul>
-          <li>Email: terms@flwff.com</li>
+          <li>Email: terms@$MKS.com</li>
           <li>Discord: discord.gg/flwff</li>
         </ul>
       </div>

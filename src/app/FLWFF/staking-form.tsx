@@ -143,7 +143,7 @@ export default function StakingForm() {
           render={({ field }: { field: { value: number; onChange: (value: number) => void } }) => (
             <FormItem>
               <FormLabel className="text-muted-foreground uppercase text-xs tracking-wider">
-                Montante $FLWFF (Min: {STAKE_CONFIG.MIN_AMOUNT}, Max: {STAKE_CONFIG.MAX_AMOUNT})
+                Montante $MKS (Min: {STAKE_CONFIG.MIN_AMOUNT}, Max: {STAKE_CONFIG.MAX_AMOUNT})
               </FormLabel>
               <FormControl>
                 <Input
@@ -210,7 +210,7 @@ export default function StakingForm() {
           {isPending ? (
             <><Loader2 className="mr-2 h-5 w-5 animate-spin" />Processando Stake...</>
           ) : (
-            <><BarChartBig className="mr-2 h-5 w-5" />Fazer Stake $FLWFF</>
+            <><BarChartBig className="mr-2 h-5 w-5" />Fazer Stake $MKS</>
           )}
         </Button>
       </form>

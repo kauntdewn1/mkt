@@ -7,8 +7,8 @@ import AppHeader from '@/components/layout/app-header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '$FLWFF',
-  description: '$FLWFF - Digital marketing project',
+  title: '$MKS',
+  description: '$MKS - Digital marketing project',
 };
 
 export default function RootLayout({

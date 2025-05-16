@@ -42,7 +42,7 @@ export default function HeroSection() {
         </div>
         {/* Frase centralizada acima das logos */}
         <span className="text-base md:text-lg tracking-widest mb-8 uppercase font-mono text-center block" style={{ color: '#FF1C8E' }}>
-          O $FLWFF é uma stablecoin utilitária, criada para movimentar o ecossistema de marketing digital baseado em Web3.
+          O $MKS é uma  stablecoin utilitária, criada para movimentar o ecossistema de marketing digital baseado em Web3.
         </span>
         {/* Linha de logos inspirada na Solana */}
         <motion.div

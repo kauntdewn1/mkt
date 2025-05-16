@@ -98,7 +98,7 @@ const PriceDisplay: FC<PriceDisplayProps> = ({ nftData }) => {
         </div>
 
         <div className="text-2xl md:text-3xl text-[#00ff00] font-bold mb-2">
-          {displayPrice} $FLWFF
+          {displayPrice} $MKS
           {isTyping && <span className="animate-blink">_</span>}
         </div>
         <div className="text-xs text-[#00ff00]/70 flex items-center gap-2">

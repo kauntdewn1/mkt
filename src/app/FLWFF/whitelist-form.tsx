@@ -109,7 +109,7 @@ export default function WhitelistForm() {
         className="text-center p-8 bg-input/50 backdrop-blur-sm rounded-lg shadow-xl border border-secondary/20"
       >
         <h2 className="text-3xl md:text-4xl font-black text-primary mb-3 text-center font-mono uppercase tracking-wide flex items-center justify-center">
-          <Sparkles className="mr-3 h-8 w-8 text-secondary" /> PARTICIPAR DO ECOSSISTEMA $FLWFF
+          <Sparkles className="mr-3 h-8 w-8 text-secondary" /> PARTICIPAR DO ECOSSISTEMA $MKS
         </h2>
         <p className="text-muted-foreground mb-6 text-center text-sm md:text-base">
         Cadastre-se para acesso prioritário às funcionalidades.
