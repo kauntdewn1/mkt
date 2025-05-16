@@ -51,7 +51,9 @@ const nextConfig = {
     ]
   },
   // Configurações de otimização
+  swcMinify: true,
   compiler: {
+    styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
   },
   // Configurações de cache
@@ -105,6 +107,9 @@ const nextConfig = {
       }
     ],
   },
+  experimental: {
+    optimizeFonts: true,
+  }
 }
 
 export default nextConfig

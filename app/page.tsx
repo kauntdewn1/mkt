@@ -2,6 +2,7 @@ import HeroSection from 'src/app/FLWFF/hero-section';
 import StakingSection from 'src/app/FLWFF/staking-section';
 import PriceDisplay from 'src/app/FLWFF/price-display';
 import WhitelistForm from 'src/app/FLWFF/whitelist-form';
+import PageFooter from '@/components/layout/page-footer';
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
           <StakingSection />
         </div>
       </section>
+      <PageFooter />
     </main>
   );
 } 

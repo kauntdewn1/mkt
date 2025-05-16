@@ -4,7 +4,12 @@ import './globals.css';
 import AuthProviderWrapper from '@/components/providers/auth-provider-wrapper';
 import AppHeader from '@/components/layout/app-header';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial']
+});
 
 export const metadata: Metadata = {
   title: '$MKS',
