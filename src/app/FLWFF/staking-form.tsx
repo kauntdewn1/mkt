@@ -102,7 +102,7 @@ export default function StakingForm() {
         if (result.success && result.stakeId) {
           toast({
             title: <div className="flex items-center"><CheckCircle className="h-5 w-5 text-secondary mr-2" />Stake Realizado!</div>,
-            description: `Seu stake de ${values.amount} FLWFF foi registrado com sucesso. ID: ${result.stakeId.substring(0,8)}...`,
+            description: `Seu stake de ${values.amount} $MKS foi registrado com sucesso. ID: ${result.stakeId.substring(0,8)}...`,
             variant: 'default',
             className: 'bg-card border-secondary text-foreground',
           });
@@ -194,7 +194,7 @@ export default function StakingForm() {
           <div className="p-4 bg-input rounded-md mt-2">
             <p className="text-sm text-muted-foreground">Retorno Estimado ao Final do Período:</p>
             <p className="text-lg font-mono text-secondary">
-              {estimatedReturn.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 4 })} FLWFF
+              {estimatedReturn.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 4 })} $MKS
             </p>
             <p className="text-xs text-muted-foreground mt-1">
               Penalidade por Early Withdrawal: {STAKE_CONFIG.EARLY_WITHDRAWAL_PENALTY * 100}%

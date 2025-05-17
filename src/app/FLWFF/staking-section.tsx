@@ -113,7 +113,7 @@ export default function StakingSection() {
             animate={{ opacity: 1, y: 0 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Trave seus FLWFF e amplie seu impacto no ecossistema
+            Garanta seus $MKS e amplie seu impacto no ecossistema para obter retorno.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

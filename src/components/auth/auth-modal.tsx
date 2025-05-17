@@ -40,7 +40,15 @@ export default function AuthModal({ triggerButton }: AuthModalProps) {
 
   return (
     <>
-      <button type="button" onClick={() => setIsOpen(true)}>{triggerButton}</button>
+      <div 
+        onClick={() => setIsOpen(true)}
+        onKeyDown={(e) => e.key === 'Enter' && setIsOpen(true)}
+        className="w-full cursor-pointer"
+        role="button"
+        tabIndex={0}
+      >
+        {triggerButton}
+      </div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="sm:max-w-[425px] bg-black border border-gray-800">
           <DialogHeader>

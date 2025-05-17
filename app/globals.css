@@ -3,32 +3,96 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Cores */
+    --background: 0 0% 0%;
+    --background-start: #000000;
+    --background-end: #000000;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+
+    /* Fontes */
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-space-grotesk), ui-monospace, monospace;
+  }
+
   html {
     -webkit-text-size-adjust: 100%;
     font-feature-settings: normal;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    -webkit-tap-highlight-color: transparent;
+    font-family: var(--font-sans);
     font-variation-settings: normal;
     line-height: 1.5;
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--foreground);
+    background: linear-gradient(
+      to bottom,
+      var(--background-start),
+      var(--background-end)
+    );
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#FF00FF] via-[#FF1493] to-[#FF69B4] bg-clip-text text-transparent;
+  }
+
+  .gradient-border {
+    @apply relative before:absolute before:inset-0 before:p-[1px] before:bg-gradient-to-r before:from-[#FF00FF] before:via-[#FF1493] before:to-[#FF69B4] before:rounded-lg before:-z-10;
+  }
+
+  .scanline {
+    @apply absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,0,0.05)_50%)] bg-[length:100%_4px] pointer-events-none;
+  }
+
+  .crt-effect {
+    @apply absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_100%)] pointer-events-none;
+  }
+
+  .glow-effect {
+    @apply relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-[#FF00FF] before:via-[#FF1493] before:to-[#FF69B4] before:opacity-20 before:blur-xl before:-z-10;
   }
 }
 
 @layer utilities {
   .tw-text-display-lg {
-    font-size: 2.5rem;
-    line-height: 1.2;
+    @apply text-4xl leading-tight;
   }
 
   .tw-text-display-2lg {
-    font-size: 3rem;
-    line-height: 1.1;
+    @apply text-5xl leading-none;
   }
 
   .tw-font-light {
-    font-weight: 300;
+    @apply font-light;
   }
 
   .tw-bg-clip-text {
@@ -37,7 +101,7 @@
   }
 
   .tw-text-common-transparent {
-    color: transparent;
+    @apply text-transparent;
   }
 
   .tw-bg-gradient-mono-purple {
@@ -47,41 +111,28 @@
   }
 
   @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
-}
 
-:root {
-  --background: 0 0% 0%;
-  --background-start: #000000;
-  --background-end: #000000;
-  --foreground: 0 0% 98%;
-  --card: 0 0% 0%;
-  --card-foreground: 0 0% 98%;
-  --popover: 0 0% 0%;
-  --popover-foreground: 0 0% 98%;
-  --primary: 0 0% 98%;
-  --primary-foreground: 0 0% 0%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  --ring: 240 4.9% 83.9%;
-  --radius: 0.5rem;
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
 }
 
 .dark {
@@ -106,14 +157,4 @@
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
   --ring: 240 4.9% 83.9%;
-}
-
-body {
-  color: var(--foreground);
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--background-end)
-  )
-  var(--background-start);
 } 

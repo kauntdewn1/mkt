@@ -47,8 +47,8 @@ export default function RiskDisclosure() {
         <h2>6. Contato</h2>
         <p>Para questões sobre riscos, entre em contato através de:</p>
         <ul>
-          <li>Email: risk@flwff.com</li>
-          <li>Discord: discord.gg/flwff</li>
+          <li>Email: markcash.eth@ethermail.io</li>
+          <li>Telegram: @markcash</li>
         </ul>
       </div>
     </div>

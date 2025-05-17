@@ -41,5 +41,29 @@
   },
   "storage": {
     "rules": "storage.rules"
-  }
+  },
+  "apphosting": [
+    {
+      "backendId": "bknd-mks-app",
+      "rootDir": "q",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "functions"
+      ]
+    },
+    {
+      "backendId": "mksweb-app",
+      "rootDir": "/",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "functions"
+      ]
+    }
+  ]
 }

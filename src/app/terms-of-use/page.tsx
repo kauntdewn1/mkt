@@ -47,8 +47,8 @@ export default function TermsOfUse() {
         <h2>7. Contato</h2>
         <p>Para questões sobre estes termos, entre em contato através de:</p>
         <ul>
-          <li>Email: terms@$MKS.com</li>
-          <li>Discord: discord.gg/flwff</li>
+          <li>Email: markcash.eth@ethermail.io</li>
+          <li>Telegram: @markcash</li>
         </ul>
       </div>
     </div>

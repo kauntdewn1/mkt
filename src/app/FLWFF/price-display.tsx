@@ -82,16 +82,13 @@ const PriceDisplay: FC<PriceDisplayProps> = ({ nftData }) => {
 
   return (
     <div className="relative p-8 bg-black border-2 border-[#7b0f32] rounded-none font-mono shadow-[0_0_15px_rgba(123,15,50,0.3)]">
-      {/* Efeito de Scanline */}
-      <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(0,255,0,0.05)_50%)] bg-[length:100%_4px] pointer-events-none" />
-      
-      {/* Efeito de CRT */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,0,0.1)_0%,transparent_100%)] pointer-events-none" />
+      <div className="scanline" />
+      <div className="crt-effect" />
       
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2 text-[#00ff00]">
-            <span className="text-sm">C:\FLWFF\PRICE.EXE</span>
+            <span className="text-sm">C:\MKS\PRICE.EXE</span>
             <span className="text-xs">|</span>
             <span className="text-sm">Valor Atual:</span>
           </div>
@@ -102,26 +99,16 @@ const PriceDisplay: FC<PriceDisplayProps> = ({ nftData }) => {
           {isTyping && <span className="animate-blink">_</span>}
         </div>
         <div className="text-xs text-[#00ff00]/70 flex items-center gap-2">
-          <span className="animate-pulse">[SISTEMA] Atualizando em tempo real...</span>
+          <span className="animate-pulse-slow">[SISTEMA] Atualizando em tempo real...</span>
           <span className="text-[#00ff00]/50">{'>'}{'>'}{'>'}</span>
         </div>
         <div className="mt-4 text-sm text-[#00ff00]/80">
-          <div className="mb-2">[MENSAGEM DO SISTEMA]</div>
+          <div className="mb-2 bg-green-600 text-white px-4 py-2 rounded">[MENSAGEM DO SISTEMA]</div>
           <div className="italic">
             &ldquo;Transparência em cada bloco. O valor da sua confiança, ancorado na tecnologia.&rdquo;
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        .animate-blink {
-          animation: blink 1s infinite;
-        }
-      `}</style>
     </div>
   );
 };

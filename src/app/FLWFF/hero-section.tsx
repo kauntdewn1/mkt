@@ -10,6 +10,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background/90" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background" />
+        <div className="scanline" />
+        <div className="crt-effect" />
       </div>
 
       {/* Content */}
@@ -25,14 +27,14 @@ export default function HeroSection() {
             <div className="relative w-60 h-60 md:w-80 md:h-80 mx-auto mb-8">
               <Image
                 src="https://res.cloudinary.com/dgyocpguk/image/upload/v1747195356/LOGO_Sfundo2_av7gff.png"
-                alt="FLWFF Glow"
+                alt="$MKS Glow"
                 fill
-                className="absolute z-0 opacity-40 animate-pulse"
+                className="absolute z-0 opacity-40 animate-pulse-slow"
                 priority
               />
               <Image
                 src="https://res.cloudinary.com/dgyocpguk/image/upload/v1747195425/LOGO_Sfundo1_yn3irt.png"
-                alt="FLWFF Logo"
+                alt="$MKS Logo"
                 fill
                 className="relative z-10 object-contain"
                 priority
@@ -41,8 +43,8 @@ export default function HeroSection() {
           </motion.div>
         </div>
         {/* Frase centralizada acima das logos */}
-        <span className="text-base md:text-lg tracking-widest mb-8 uppercase font-mono text-center block" style={{ color: '#FF1C8E' }}>
-          O $MKS é uma  stablecoin utilitária, criada para movimentar o ecossistema de marketing digital baseado em Web3.
+        <span className="text-base md:text-lg tracking-widest mb-8 uppercase font-mono text-center block gradient-text">
+          O $MKS é uma stablecoin utilitária, criada para movimentar o ecossistema de marketing digital baseado na descentralização Web3.
         </span>
         {/* Linha de logos inspirada na Solana */}
         <motion.div

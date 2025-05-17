@@ -152,7 +152,7 @@ export default function MyStakesList() {
               const endDate = calculateEndDate(startDate, stake.durationMonths);
               return (
                 <TableRow key={stake.id} className="border-border/30 hover:bg-input/50">
-                  <TableCell className="font-mono">{stake.amount.toLocaleString()} FLWFF</TableCell>
+                  <TableCell className="font-mono">{stake.amount.toLocaleString()} $MKS</TableCell>
                   <TableCell>{format(startDate, 'dd/MM/yyyy', { locale: ptBR })}</TableCell>
                   <TableCell>{format(endDate, 'dd/MM/yyyy', { locale: ptBR })}</TableCell>
                   <TableCell>{stake.durationMonths} Meses</TableCell>

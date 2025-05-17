@@ -15,8 +15,8 @@ import {
 import { Input } from 'src/components/ui/input';
 import { useState, useTransition, useEffect } from 'react';
 import { Loader2, Wallet, Link2, Sparkles } from 'lucide-react';
-import { useAuth } from 'src/contexts/auth-context';
-import AuthModal from 'src/components/auth/auth-modal';
+import { useAuth } from '@/contexts/auth-context';
+import AuthModal from '@/components/auth/auth-modal';
 import { db } from 'src/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from 'sonner';
@@ -147,10 +147,10 @@ export default function WhitelistForm() {
     >
       <div className="text-center">
         <h2 className="text-3xl md:text-4xl font-black text-primary mb-3 text-center font-mono uppercase tracking-wide flex items-center justify-center">
-          <Sparkles className="mr-3 h-8 w-8 text-secondary" /> VOCÊ VAI FAZER PARTE DO ECOSSISTEMA FLWFF
+          <Sparkles className="mr-3 h-8 w-8 text-secondary" /> VOCÊ VAI FAZER PARTE DO ECOSSISTEMA $MKS
         </h2>
         <p className="text-muted-foreground mb-6 text-center text-sm md:text-base">
-          Acesse primeiro. Pegue antes. Morda a oportunidade.
+          Acesse primeiro. Utilize antes. Garanta a oportunidade.
         </p>
       </div>
       <Form {...form}>
@@ -217,7 +217,7 @@ export default function WhitelistForm() {
             )}
           </Button>
           <p className="text-xs text-muted-foreground text-center mt-4">
-            Tu vai ser avisado dos próximos rituais direto na tua alma digital (e-mail).
+            Inscreva-se (e-mail).
           </p>
         </form>
       </Form>
